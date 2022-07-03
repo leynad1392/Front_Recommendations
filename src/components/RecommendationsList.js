@@ -1,11 +1,11 @@
 
-import { Recommendation } from "./Recommendation"
+import { Recommendation } from "../components/Recommendation";
 
 export const RecommendationsList = ({recommendations}) => {
     return recommendations.length ? (
         <ul>
-            {recommendations.map((recommendation) => (
-                <li key={recommendation.id}><Recommendation recommendation={recommendation} />
+            {recommendations.map((recommendations) => (
+                <li key={recommendations.id}><Recommendation recommendations={recommendations} />
 
                 </li>
             ))}

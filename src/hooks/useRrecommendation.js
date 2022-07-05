@@ -1,32 +1,30 @@
 import { useEffect, useState } from "react";
 import { getSingleRecommendationService } from "../services";
 
-
-
 const useRecommendation = (id) => {
-    const [recommendations, setRecommendations] = useState(null);
+    const [recommendation, setRecommendation] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
  useEffect( () => {
-   const loadRecommendations = async () => {
+   const loadRecommendation = async () => {
     try{
         setLoading(true);
         
-        const data = await getSingleRecommendationService (id);
+        const data = await getSingleRecommendationService(id);
 
-        setRecommendations(data);
+        setRecommendation(data);
     }catch(error) {
         setError(error.message);
     }finally{
         setLoading(false);
     }
    };
-   loadRecommendations();
+   loadRecommendation();
 
  }, [id]);
 
-    return{ recommendations, loading, error};
+    return{ recommendation, loading, error};
 };
 
 export default useRecommendation;

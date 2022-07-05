@@ -4,7 +4,7 @@ import { Footer } from './components/Footer';
 import { Header } from "./components/Header";
 import { Homepages } from './pages/Homepages';
 import { Recommendationpages } from './pages/Recommendationpage';
-import { Loginpages } from './pages/Loginpages';
+import { Loginpages } from './pages/Loginpage';
 import { Registerpage } from './pages/Registerpage';
 import { Notfoundpages } from './pages/Notfoundpages';
 

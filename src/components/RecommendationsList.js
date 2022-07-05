@@ -1,5 +1,5 @@
 
-import { Recommendation } from "../components/Recommendation";
+import { Recommendation } from "./Recommendation";
 
 export const RecommendationsList = ({recommendations}) => {
     return recommendations.length ? (

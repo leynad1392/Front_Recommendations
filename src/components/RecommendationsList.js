@@ -1,16 +1,22 @@
+import { Recommendation } from './Recommendation';
 
-import { Recommendation } from "./Recommendation";
-
-export const RecommendationsList = ({recommendations}) => {
-    return recommendations.length ? (
-        <ul>
-            {recommendations.map((recommendations) => (
-                <li key={recommendations.id}><Recommendation recommendations={recommendations} />
-
-                </li>
-            ))}
-        </ul>
-    ) : (
-        <p>no recomendaciones</p>
-    );
+export const RecommendationsList = ({
+  recommendations,
+  setRecommendations,
+}) => {
+  return recommendations.length ? (
+    <ul>
+      {recommendations.map((recommendation) => (
+        <li key={recommendation.id}>
+          <Recommendation
+            recommendations={recommendations}
+            recommendation={recommendation}
+            setRecommendations={setRecommendations}
+          />
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p>no recomendaciones</p>
+  );
 };

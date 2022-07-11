@@ -4,20 +4,20 @@ import { useToken } from '../context/AuthContext';
 export const Auth = () => {
   const [token] = useToken();
   return (
-    <ul>
+    <ul className='ul'>
       {token && (
         <li>
-          <Link to={'newRecommendation'}> New Recommendation </Link>
+          <Link className='links' to={'newRecommendation'}> New Recommendation </Link>
         </li>
       )}
       {!token && (
         <li>
-          <Link to={'/register'}>Register</Link>
+          <Link className='links' to={'/register'}>Register</Link>
         </li>
       )}
       {!token && (
         <li>
-          <Link to={'/login'}>Login</Link>
+          <Link className='links' to={'/login'}>Login</Link>
         </li>
       )}
     </ul>

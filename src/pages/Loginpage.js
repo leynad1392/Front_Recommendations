@@ -23,10 +23,15 @@ export const Loginpages = () => {
     }
   };
   return (
-    <section>
-      <h1>Login</h1>
+    <section className='rsection'>
+      <form className='bone'>
+      </form>
+      <form className='btwo'>
+      </form>
+      <div></div>
+      <h1 className='tittleregister'>Login</h1>
       <form onSubmit={handleForm}>
-        <fieldset>
+        <fieldset className='label'>
           <label htmlFor='email'>Email</label>
           <input
             type='email'
@@ -37,7 +42,7 @@ export const Loginpages = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </fieldset>
-        <fieldset>
+        <fieldset className='label'>
           <label htmlFor='pass'>Password</label>
           <input
             type='password'
@@ -49,7 +54,7 @@ export const Loginpages = () => {
           />
         </fieldset>
 
-        <button>Login</button>
+        <button className='buttonregister'>Login</button>
         {error ? <p>{error}</p> : null}
       </form>
     </section>

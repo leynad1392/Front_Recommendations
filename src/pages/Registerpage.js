@@ -33,11 +33,17 @@ export const Registerpage = () => {
   };
 
   return (
-    <section>
-      <h1>Register</h1>
+    <section className='rsection'>
+      <form className='bone'>
+      </form>
+      <form className='btwo'>
+      </form>
+      <div>
+
+      <h1 className='tittleregister'>Register</h1>
       <form onSubmit={handleForm}>
-        <fieldset>
-          <label htmlFor='email'>Email</label>
+        <fieldset className='label'>
+          <label  htmlFor='email'>Email</label>
           <input
             type='email'
             id='email'
@@ -47,8 +53,8 @@ export const Registerpage = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </fieldset>
-        <fieldset>
-          <label htmlFor='username'>Username</label>
+        <fieldset className='label'>
+          <label  htmlFor='username'>Username</label>
           <input
             type='username'
             id='email'
@@ -58,8 +64,8 @@ export const Registerpage = () => {
             onChange={(e) => setusername(e.target.value)}
           />
         </fieldset>
-        <fieldset>
-          <label htmlFor='pass1'>Password</label>
+        <fieldset className='label'>
+          <label  htmlFor='pass1'>Password</label>
           <input
             type='password'
             id='pass1'
@@ -69,8 +75,8 @@ export const Registerpage = () => {
             onChange={(e) => setPass1(e.target.value)}
           />
         </fieldset>
-        <fieldset>
-          <label htmlFor='pass2'>Repeat password</label>
+        <fieldset className='label'>
+          <label  htmlFor='pass2'>Repeat password</label>
           <input
             type='password'
             id='pass2'
@@ -80,9 +86,10 @@ export const Registerpage = () => {
             onChange={(e) => setPass2(e.target.value)}
           />
         </fieldset>
-        <button>Register</button>
+        <button className='buttonregister'>Register</button>
         {error ? <p>{error}</p> : null}
       </form>
+      </div>
     </section>
   );
 };

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+
 import { useToken } from '../context/AuthContext';
 import {
   deleteRecommendationService,
@@ -44,36 +44,37 @@ export const Recommendation = ({
     } catch (error) {}
   };
   return (
-    <article>
-      <p>Title: {recommendation.title}</p>
-      <p> Category: {recommendation.category}</p>
-      <p> Place: {recommendation.place}</p>
-      <p> LeadIn: {recommendation.leadin}</p>
+    <article className='section'>
       {recommendation.image ? (
-        <img
+        <img className='img'
           src={`${process.env.REACT_APP_BACKEND}/uploads/${recommendation.image}`}
           alt={recommendation.text}
         />
       ) : null}
+      <div className='carts'>
+
+      <p>Title: {recommendation.title}</p>
+      <p> Category: {recommendation.category}</p>
+      <p> Place: {recommendation.place}</p>
+      <p> LeadIn: {recommendation.leadin}</p>
+      <p> Description: {recommendation.text}</p>
       <p>
-        By {recommendation.CreatedBy} on
-        <Link to={`/recommendations/${recommendation.id}`}>
-          {new Date(recommendation.created_at).toLocaleString()}
-        </Link>
+        By {recommendation.CreatedBy} 
       </p>
       {token && (
-        <button onClick={() => handleDelete(recommendation.id)}>
+        <button className='butdos' onClick={() => handleDelete(recommendation.id)}>
           {' '}
           Eliminar
         </button>
       )}
       {token && (
-        <button onClick={() => handleLike(recommendation.id)}>
+        <button className='butdos' onClick={() => handleLike(recommendation.id)}>
           Agregar like
         </button>
       )}
 
       <p>{recommendation.likes}</p>
+      </div>
     </article>
   );
 };

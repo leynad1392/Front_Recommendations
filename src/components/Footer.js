@@ -1,5 +1,5 @@
 export const Footer = () => {
-    return <footer>
+    return <footer className="footer">
         (c) recommendations 2o22
     </footer>
 };

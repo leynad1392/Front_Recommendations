@@ -33,29 +33,32 @@ export const Homepages = () => {
   if (error) return <ErrorMessage message={error} />;
 
   return (
-    <section>
-      <h1>Lasts Recommendations</h1>
-      <form onSubmit={handleSubmit}>
+    <section className='section'>
+      <form className='bone' onSubmit={handleSubmit}>
         <input
           type='text'
           name='category'
           onChange={(e) => setCategory(e.target.value)}
         />
-        <button>Search by Category</button>
+        <button className='button'>Search by Category</button>
       </form>
 
-      <form onSubmit={handleSubmit2}>
+      <form className='btwo' onSubmit={handleSubmit2}>
         <input
           type='text'
           name='place'
           onChange={(e) => setPlace(e.target.value)}
         />
-        <button>Search by Place</button>
+        <button className='button'>Search by Place</button>
       </form>
+      <h1 className='lastr'>Lasts Recommendations</h1>
+
+      <div className='card'>
       <RecommendationsList
         recommendations={recommendations}
         setRecommendations={setRecommendations}
       />
+         </div>
     </section>
   );
 };

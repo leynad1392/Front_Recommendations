@@ -18,7 +18,6 @@ export const Loginpages = () => {
     try {
       const data = await logInUserService({ email, password });
       setToken(data);
-      console.log(data);
     } catch (error) {
       setError(error.message);
     }

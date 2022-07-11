@@ -3,16 +3,23 @@ import { useToken } from '../context/AuthContext';
 
 export const Auth = () => {
   const [token] = useToken();
-
   return (
     <ul>
-      <li>
-        <Link to={'/register'}>Register</Link>
-      </li>
-      <li>
-        <Link to={'/login'}>Login</Link>
-      </li>
-      <li>Token: {token}</li>
+      {token && (
+        <li>
+          <Link to={'newRecommendation'}> New Recommendation </Link>
+        </li>
+      )}
+      {!token && (
+        <li>
+          <Link to={'/register'}>Register</Link>
+        </li>
+      )}
+      {!token && (
+        <li>
+          <Link to={'/login'}>Login</Link>
+        </li>
+      )}
     </ul>
   );
 };

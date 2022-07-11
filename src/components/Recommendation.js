@@ -45,10 +45,10 @@ export const Recommendation = ({
   };
   return (
     <article>
-      <p>{recommendation.title}</p>
-      <p>{recommendation.category}</p>
-      <p>{recommendation.place}</p>
-      <p>{recommendation.leadin}</p>
+      <p>Title: {recommendation.title}</p>
+      <p> Category: {recommendation.category}</p>
+      <p> Place: {recommendation.place}</p>
+      <p> LeadIn: {recommendation.leadin}</p>
       {recommendation.image ? (
         <img
           src={`${process.env.REACT_APP_BACKEND}/uploads/${recommendation.image}`}
@@ -67,9 +67,12 @@ export const Recommendation = ({
           Eliminar
         </button>
       )}
-      <button onClick={() => handleLike(recommendation.id)}>
-        Agregar like
-      </button>
+      {token && (
+        <button onClick={() => handleLike(recommendation.id)}>
+          Agregar like
+        </button>
+      )}
+
       <p>{recommendation.likes}</p>
     </article>
   );

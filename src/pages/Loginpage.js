@@ -30,7 +30,7 @@ export const Loginpages = () => {
       </form>
       <div></div>
       <h1 className='tittleregister'>Login</h1>
-      <form onSubmit={handleForm}>
+      <form className='fpage' onSubmit={handleForm}>
         <fieldset className='label'>
           <label htmlFor='email'>Email</label>
           <input

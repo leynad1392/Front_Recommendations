@@ -53,8 +53,9 @@ export const NewRecommendationpage = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <section className='newreco'>
+    <form className='newr' onSubmit={handleSubmit}>
+      <label className='labelnew'>
         Select Image:
         <input
           type='file'
@@ -62,7 +63,7 @@ export const NewRecommendationpage = () => {
           onChange={(e) => setFile(e.target.files[0])}
         />
       </label>
-      <label>
+      <label className='labelnew'>
         Title:
         <input
           type='text'
@@ -71,7 +72,7 @@ export const NewRecommendationpage = () => {
           onChange={(e) => setTitle(e.target.value)}
         />
       </label>
-      <label>
+      <label className='labelnew'>
         Category:
         <input
           type='text'
@@ -80,7 +81,7 @@ export const NewRecommendationpage = () => {
           onChange={(e) => setCategory(e.target.value)}
         />
       </label>
-      <label>
+      <label className='labelnew'>
         Place:
         <input
           type='text'
@@ -89,7 +90,7 @@ export const NewRecommendationpage = () => {
           onChange={(e) => setPlace(e.target.value)}
         />
       </label>
-      <label>
+      <label className='labelnew'>
         {' '}
         Lead In
         <input
@@ -99,12 +100,13 @@ export const NewRecommendationpage = () => {
           onChange={(e) => setLeadin(e.target.value)}
         />
       </label>
-      <label>
+      <label className='labelnew'>
         Text:
         <textarea value={text} onChange={(e) => setText(e.target.value)} />
       </label>
 
       <button disabled={loading}>Send</button>
     </form>
+    </section>
   );
 };
